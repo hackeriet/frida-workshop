@@ -21,4 +21,4 @@ make hello
 ```
 
 ## Notes
-- 
+- If you have permission issues when attempting to attach to the `hello` process, run `sudo sysctl kernel.yama.ptrace_scope=0`
