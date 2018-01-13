@@ -1,20 +1,15 @@
 'use strict';
 
-var puts = new NativeFunction(
-  Module.findExportByName(null, 'puts'),
-  'int',
-  ['pointer'])
+var addr = ptr('0x55a7ca8b66f0')
 
-function log (msg) {
-  puts(Memory.allocUtf8String(msg));
-}
+Interceptor.attach(addr, {
+  onEnter: function (args) {
+    send({ type: 'need-input' })
 
-send({color: 'red'})
-
-recv(onMessage)
-
-function onMessage(msg) {
-  log('onMessage', JSON.stringify(msg, null, 2))
-  recv(onMessage)
-}
+    var operation = recv(function (res) {
+      args[0] = ptr(res)
+    })
+    operation.wait()
+  }
+})
 

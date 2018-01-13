@@ -1,8 +1,25 @@
-import frida
 import codecs
+import frida
+from frida.application import Reactor
+import sys
+import threading
+
+script = None
+
+def wait_for_keypress():
+  sys.stdin.read()
+
+reactor = Reactor(wait_for_keypress)
+
+def send_value():
+  value = input("Enter a number: ")
+  script.post(value)
+
 
 def on_message(message, data):
   print("on_message", message)
+  if message["type"] == "send":
+    reactor.schedule(lambda: send_value())
 
 session = frida.attach("hello")
 
@@ -18,3 +35,4 @@ while True:
   value = input("Enter a value:")
   script.post(value)
 
+reactor.run()
