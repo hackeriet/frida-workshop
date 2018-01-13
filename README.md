@@ -51,4 +51,5 @@ At this point, the git tag is `1`. (`git checkout 1`)
 
 ## References
 - https://www.frida.re/docs/home/
+- https://codeshare.frida.re/
 
