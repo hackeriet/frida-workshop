@@ -22,10 +22,20 @@ make hello
 
 ## Usage
 
+### Normal test run
+
 1. Compile and run `hello`
 2. Copy the memory address printed by `hello` (e.g. `0x55cac66ea6f0`)
 3. Replace the memory address in `explore.js`
 4. Run `python3 explore.py`
+
+At this point, the git tag is `1`. (`git checkout 1`)
+
+### Run with frida and 'live-reload'
+
+1. Compile and run `hello`
+2. Run frida to attach to the process: `frida hello -l explore.js`
+
 
 
 ## Notes

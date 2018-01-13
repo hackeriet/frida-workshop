@@ -9,6 +9,7 @@ Interceptor.attach(ptr('0x55cac66ea6f0'), {
 })
 */
 
+// Now, this file should be ran by: frida hello -l explore.js
 var sleep = new NativeCallback(function (delay) {
   Thread.sleep(0.05)
 }, 'uint', ['uint'])
