@@ -24,6 +24,8 @@ make hello
 
 ### Normal test run
 
+> Used for version 1 (`git checkout 1`)
+
 1. Compile and run `hello`
 2. Copy the memory address printed by `hello` (e.g. `0x55cac66ea6f0`)
 3. Replace the memory address in `explore.js`
@@ -32,6 +34,8 @@ make hello
 At this point, the git tag is `1`. (`git checkout 1`)
 
 ### Run with frida and 'live-reload'
+
+> Used for version 2 (`git checkout 2`)
 
 1. Compile and run `hello`
 2. Run frida to attach to the process: `frida hello -l explore.js`
