@@ -52,6 +52,10 @@ No need to record the f memory location. Run the python script now, instead of f
 $ python explore.py
 ```
 
+## Running from tag 5
+
+1. Replace memory address in `explore.js` with the address printed by the running `hello` progra, then run the python script `python explore.py`
+
 ## Notes
 - For python3, install frida with `pip3`
 - If you have permission issues when attempting to attach to the `hello` process, run `sudo sysctl kernel.yama.ptrace_scope=0`
