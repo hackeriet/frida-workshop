@@ -40,7 +40,9 @@ At this point, the git tag is `1`. (`git checkout 1`)
 1. Compile and run `hello`
 2. Run frida to attach to the process: `frida hello -l explore.js`
 
+### Running from tag 3
 
+- Replace the memory address specified in `explore.js` and run with `frida hello -l explore.js`
 
 ## Notes
 - For python3, install frida with `pip3`
