@@ -44,6 +44,14 @@ At this point, the git tag is `1`. (`git checkout 1`)
 
 - Replace the memory address specified in `explore.js` and run with `frida hello -l explore.js`
 
+### Running from tag 4
+
+No need to record the f memory location. Run the python script now, instead of frida directly.
+
+```
+$ python explore.py
+```
+
 ## Notes
 - For python3, install frida with `pip3`
 - If you have permission issues when attempting to attach to the `hello` process, run `sudo sysctl kernel.yama.ptrace_scope=0`
