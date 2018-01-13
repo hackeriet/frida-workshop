@@ -1,15 +1,11 @@
 'use strict';
 
-var addr = ptr('0x55a7ca8b66f0')
+var addr = ptr('0x56091048f6f0')
+var f = new NativeFunction(addr, 'void', ['int'])
 
-Interceptor.attach(addr, {
-  onEnter: function (args) {
-    send({ type: 'need-input' })
-
-    var operation = recv(function (res) {
-      args[0] = ptr(res)
-    })
-    operation.wait()
+rpc.exports = {
+  invokeF: function (n) {
+    f(n)
   }
-})
+}
 
