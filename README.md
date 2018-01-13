@@ -33,3 +33,6 @@ make hello
 - If you have permission issues when attempting to attach to the `hello` process, run `sudo sysctl kernel.yama.ptrace_scope=0`
 - To enable ES2015 syntax, use `session.enable_jit()` in the frida python script
 
+## References
+- https://www.frida.re/docs/home/
+
