@@ -1,12 +1,11 @@
 'use strict';
 
-var address = '0x559aefb086f0'
-var f = new NativeFunction(ptr(address), 'void', ['int'])
+send({color: 'red'})
 
-// When frida is ran, print these statements through the `hello` process
-f(1337)
-f(1337)
-f(1337)
-f(1337)
-f(1337)
+recv(onMessage)
+
+function onMessage(msg) {
+  console.log('onMessage', JSON.stringify(msg, null, 2))
+  recv(onMessage)
+}
 
